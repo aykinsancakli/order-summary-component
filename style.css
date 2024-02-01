@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Pale-blue: hsl(225, 100%, 94%);
+  --Bright-blue: hsl(245, 75%, 52%);
+  --Very-pale-blue: hsl(225, 100%, 98%);
+  --Desaturated-blue: hsl(224, 23%, 55%);
+  --Dark-blue: hsl(223, 47%, 23%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  line-height: 1;
+
+  background-image: url(images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--Pale-blue);
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CARD */
+.card {
+  max-width: 40rem;
+  border-radius: 15px;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+}
+
+/* CARD HEADER */
+.card-header img {
+  width: 100%;
+  display: block;
+}
+
+/* CARD INFO */
+.card-info {
+  padding: 3.2rem;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.heading-primary {
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: var(--Dark-blue);
+}
+
+.card-description {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--Desaturated-blue);
+}
+
+.card-plan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--Very-pale-blue);
+  padding: 2rem;
+  border-radius: 11px;
+  margin-bottom: 1rem;
+}
+
+.card-plan--left {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.card-plan-price {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* height: 4.8rem; */
+  gap: 0.6rem;
+}
+
+.plan-type {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--Dark-blue);
+  align-self: flex-start;
+}
+
+.plan-price {
+  font-size: 1.6rem;
+  align-self: flex-start;
+  color: var(--Desaturated-blue);
+}
+
+.plan-change {
+  text-decoration: underline;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--Bright-blue);
+}
+
+.plan-change:hover {
+  color: rgba(56, 41, 224, 0.619);
+  cursor: pointer;
+}
+
+/* BUTTONS */
+.payment-button,
+.cancel-button {
+  border: none;
+  background-color: var(--Bright-blue);
+  padding: 1.6rem;
+  border-radius: 9px;
+  color: var(--Very-pale-blue);
+  font-size: 1.4rem;
+  font-weight: 700;
+  box-shadow: 0 1.2rem 2.4rem 1rem rgba(56, 41, 224, 0.15);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.payment-button:hover {
+  background-color: rgba(56, 41, 224, 0.8);
+}
+
+.cancel-button {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--Desaturated-blue);
+  width: fit-content;
+  align-self: center;
+  padding: 1.4rem;
+}
+
+.cancel-button:hover {
+  color: var(--Dark-blue);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 30em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  body {
+    background-image: url(images/pattern-background-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: var(--Pale-blue);
+  }
+
+  .card {
+    margin: 0 3.2rem;
+  }
+
+  /* cancel hover */
+  .cancel-button:hover {
+    color: var(--Desaturated-blue);
+  }
+
+  .cancel-button:active {
+    color: var(--Dark-blue);
+  }
+}
